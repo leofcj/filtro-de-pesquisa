@@ -13,7 +13,24 @@ export class AppComponent implements OnInit {
 constructor() { }
 
 
-ngOnInit() { }
+ngOnInit() { 
+  this.order()
+  }
+
+
+order(){
+  function compare( a, b ) {
+  if ( a.assistente < b.assistente ){
+    return -1;
+  }
+  if ( a.assistente > b.assistente ){
+    return 1;
+  }
+  return 0;
+}
+
+ return this.mesa.sort( compare );
+}
 
 mesa = [
 {equipe: 'EQ.001', assistente: 'Andreia', supervisor: 'Nésio'},
