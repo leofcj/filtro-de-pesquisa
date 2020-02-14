@@ -1,0 +1,18 @@
+
+<nav class="navbar">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter"> 
+</nav>
+
+<div>
+  <tr> 
+    <td>ID</td>
+    <td>NOME</td>
+    <td>SUPERVISOR</td>
+</tr>
+</div>
+
+<tr *ngFor="let usuario of mesa | filter:filter; let i = index; orderBy">
+    <td>{{i}}</td>
+    <td>{{usuario.assistente}}</td>
+    <td>{{usuario.supervisor}}</td>
+</tr>
